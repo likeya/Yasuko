@@ -1414,7 +1414,7 @@ a.btn-post-excerpt
 
 .single-post-inner
 {
-    font-family: '愛らしいです', 'Exo', '-apple-system', 'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei', Helvetica, Arial, sans-serif; 
+    font-family: 'Exo', '-apple-system', 'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei', Helvetica, Arial, sans-serif; 
     font-size: 1.8rem;
 
     overflow: hidden;
@@ -1422,6 +1422,7 @@ a.btn-post-excerpt
     padding: 0rem 2.8% .8rem;
 
     border-bottom: 1px dashed #e5e5e5;
+    background-color: #fff;
 }
 .single-post-inner img
 {
@@ -1469,7 +1470,7 @@ a.btn-post-excerpt
 }
 .single-post-inner a
 {
-    font-family: '愛らしいです', 'Exo', '-apple-system', 'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+    font-family: 'Exo', '-apple-system', 'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
     font-size: 1.6rem;
     line-height: 2.8rem;
 
@@ -1489,7 +1490,7 @@ a.btn-post-excerpt
 }
 .single-post-inner p
 {
-    font-family: '愛らしいです', 'Exo', '-apple-system', 'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei', Helvetica, Arial, sans-serif; 
+    font-family: 'Exo', '-apple-system', 'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei', Helvetica, Arial, sans-serif; 
     font-size: 1.6rem;
     line-height: 2.8rem;
 

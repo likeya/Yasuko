@@ -20,10 +20,3 @@
     font-weight: 400;
     src: local('Exo Regular'), local('Exo-Regular'), url(https://luoleiorg.b0.upaiyun.com/source/fonts/exo/ZcGd2dvMSgl3mHN3lKAjNw.woff) format('woff');
 }
-
-@font-face {
-    font-family: '愛らしいです';
-    font-weight: normal;
-    font-style: normal;
-    src: url('http://cat.yufan.me/fonts/SentyMarukoElementary.ttf');
-}
