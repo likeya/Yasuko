@@ -6,7 +6,7 @@
   url('//at.alicdn.com/t/font_1451113484_260868.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
   url('//at.alicdn.com/t/font_1451113484_260868.svg#iconfont') format('svg'); /* iOS 4.1- */
 }
-                          
+
 @font-face {
     font-family: 'Exo';
     font-style: normal;
@@ -19,4 +19,11 @@
     font-style: normal;
     font-weight: 400;
     src: local('Exo Regular'), local('Exo-Regular'), url(https://luoleiorg.b0.upaiyun.com/source/fonts/exo/ZcGd2dvMSgl3mHN3lKAjNw.woff) format('woff');
+}
+
+@font-face {
+    font-family: '愛らしいです';
+    font-weight: normal;
+    font-style: normal;
+    src: url('http://cat.yufan.me/fonts/SentyMarukoElementary.ttf');
 }

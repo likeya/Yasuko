@@ -197,10 +197,6 @@ var General = {
                 }
             });
         })
-
-
-
-
     },
     arrowEvent: function() {
         $('.arrow_down').click(function() {
