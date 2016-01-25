@@ -8,6 +8,8 @@ build/*
 build
 dist/*
 dist
+build-output/*
+build-output
 
 # Node Modules (use `npm install` to generate these)
 node_modules/*
