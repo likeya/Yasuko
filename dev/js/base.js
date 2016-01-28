@@ -123,7 +123,7 @@ var duoshuoQuery = {
 };
 
 var GlobalConfigue = {
-    duoshuoDomain: 'http://yufan.me',
+    duoshuoDomain: 'https://yufan.me',
 }
 
 
