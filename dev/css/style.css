@@ -364,7 +364,7 @@ th {
     @include use-sprite($icon-search,$normal,$retina)
 }
 */
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+css-extras+git+handlebars+http+makefile+markdown+nginx+php+sass+scss&plugins=line-highlight+line-numbers+autolinker+file-highlight+show-language */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+applescript+bash+c+ruby+css-extras+git+groovy+handlebars+http+jade+java+json+lua+makefile+markdown+nasm+nginx+objectivec+perl+php+sass+scss+scala+sql+stylus+swift+yaml&plugins=line-highlight+line-numbers+autolinker+file-highlight+show-language */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -373,9 +373,9 @@ th {
 code[class*="language-"],
 pre[class*="language-"] {
   color: black;
+  background: none;
   text-shadow: 0 1px white;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  direction: ltr;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -564,7 +564,7 @@ pre.line-numbers > code {
 div.prism-show-language {
   position: relative; }
 
-div.prism-show-language > div.prism-show-language-label[data-language] {
+div.prism-show-language > div.prism-show-language-label {
   color: black;
   background-color: #CFCFCF;
   display: inline-block;
@@ -1071,8 +1071,7 @@ a.btn-post-excerpt {
   .single-post-inner hr {
     border: 1px solid #efefef; }
   .single-post-inner iframe, .single-post-inner frame, .single-post-inner video {
-    max-width: 100%;
-    height: auto; }
+    max-width: 100%; }
   .single-post-inner pre {
     white-space: pre-wrap; }
     .single-post-inner pre code {

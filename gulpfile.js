@@ -15,8 +15,6 @@ var del = require('del');
 var jshint = require('gulp-jshint');
 
 var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-
 
 var autoprefixer = require('gulp-autoprefixer');
 var minifycss = require('gulp-minify-css');
