@@ -1,5 +1,4 @@
 $.fn.extend({
-
     isOnScreenVisible: function() {
         if (!$('body').hasClass('post-template')) {
             return false;
@@ -18,7 +17,6 @@ $.fn.extend({
 
         return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
     },
-
 });
 
 function loadJS(url, callback, el) {
@@ -36,13 +34,13 @@ function loadJS(url, callback, el) {
                     callback();
                 }
             }
-        }
+        };
     } else {
         script.onload = function() {
             if (callback) {
                 callback();
             }
-        }
+        };
     }
     script.src = url;
     if (el) {
@@ -50,67 +48,6 @@ function loadJS(url, callback, el) {
     } else {
         head.insertBefore(script, head.firstChild);
     }
-};
-
-/**
- * Canvas 背景动画
- */
-function bgImage() {
-    function n() {
-        t.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, t.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-    }
-
-    function e() {
-        i.clearRect(0, 0, t.width, t.height);
-        var n = [a].concat(m);
-        m.forEach(function(e) {
-            e.x += e.xa, e.y += e.ya, e.xa *= e.x > t.width || e.x < 0 ? -1 : 1, e.ya *= e.y > t.height || e.y < 0 ? -1 : 1, i.fillRect(e.x - .5, e.y - .5, 1, 1);
-            for (var o = 0; o < n.length; o++) {
-                var m = n[o];
-                if (e !== m && null !== m.x && null !== m.y) {
-                    var d, u = e.x - m.x,
-                        c = e.y - m.y,
-                        r = u * u + c * c;
-                    r < m.max && (m === a && r >= m.max / 2 && (e.x -= .03 * u, e.y -= .03 * c), d = (m.max - r) / m.max, i.beginPath(), i.lineWidth = d / 2, i.strokeStyle = "rgba(0,0,0," + (d + .2) + ")", i.moveTo(e.x, e.y), i.lineTo(m.x, m.y), i.stroke())
-                }
-            }
-            n.splice(n.indexOf(e), 1)
-        }), o(e)
-    }
-    var t = document.getElementById("cas"),
-        i = t.getContext("2d");
-    n(), window.onresize = n;
-    var o = function() {
-            return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(n) {
-                window.setTimeout(n, 1e3 / 60)
-            }
-        }(),
-        a = {
-            x: null,
-            y: null,
-            max: 2e4
-        };
-    window.onmousemove = function(n) {
-        n = n || window.event, a.x = n.clientX, a.y = n.clientY
-    }, window.onmouseout = function(n) {
-        a.x = null, a.y = null
-    };
-    for (var m = [], d = 0; 150 > d; d++) {
-        var u = Math.random() * t.width,
-            c = Math.random() * t.height,
-            r = 2 * Math.random() - 1,
-            l = 2 * Math.random() - 1;
-        m.push({
-            x: u,
-            y: c,
-            xa: r,
-            ya: l,
-            max: 6e3
-        })
-    }
-    setTimeout(function() {
-        e()
-    }, 100)
 }
 
 /**
@@ -124,8 +61,7 @@ var duoshuoQuery = {
 
 var GlobalConfigue = {
     duoshuoDomain: 'https://yufan.me',
-}
-
+};
 
 var General = {
     isMobile: false,
@@ -135,12 +71,12 @@ var General = {
     init: function() {
         var win = window;
         var doc = win.document;
-        var UA = navigator.userAgent.toLowerCase()
+        var UA = navigator.userAgent.toLowerCase();
         var isAndroid = win.navigator.appVersion.match(/android/gi);
         var isIPhone = win.navigator.appVersion.match(/iphone/gi);
         if (UA.match(/MicroMessenger/i) == "micromessenger") {
             General.isWechat = true;
-            $('body').addClass('wechat-webview')
+            $('body').addClass('wechat-webview');
         }
         if (!!isAndroid) {
             General.isMobile = true;
@@ -182,7 +118,7 @@ var General = {
     webFontLoader: function() {
         WebFontConfig = {
             loading: function() {
-                console.log('loading font')
+                console.log('loading font');
             },
             custom: {
                 families: ['Exo', 'iconfont'],
@@ -196,7 +132,7 @@ var General = {
                     families: ['Exo', 'iconfont']
                 }
             });
-        })
+        });
     },
     arrowEvent: function() {
         $('.arrow_down').click(function() {
@@ -206,7 +142,7 @@ var General = {
                 window.location.hash = '#';
             });
             return false;
-        })
+        });
     },
     //平滑滚动到顶部
     scrollToPos: function(position) {
@@ -229,7 +165,7 @@ var General = {
                 window.location.hash = '#';
             });
             console.log('我跳');
-        })
+        });
     },
     /*给文章中的url添加iconfont方便识别*/
     urlIconlize: function(url) {
@@ -252,8 +188,7 @@ var General = {
             'jianshu': iconFontTag + '-jianshu',
             'youku': iconFontTag + '-youku',
             'youtube': iconFontTag + '-youtube'
-
-        }
+        };
 
         for (var name in iconMap) {
             if (typeof iconMap[name] !== 'function') {
@@ -297,7 +232,7 @@ var General = {
         var loadQR = {
             alipay: '/assets/images/qr-alipay-256.png',
             wechat: '/assets/images/qr-wechat-256.png'
-        }
+        };
         var loadQRUrl;
         if (!!General.isWechat) {
             $('.wechat-code b').html('长按上方二维码打赏作者');
@@ -305,7 +240,7 @@ var General = {
         }
 
         $('.money-like .reward-button').hover(function() {
-            console.log('悬浮')
+            console.log('悬浮');
             $('img.wechat-img').attr('src', loadQR.wechat);
             $('img.alipay-img').attr('src', loadQR.alipay);
             $('.money-code').fadeIn();
@@ -313,7 +248,7 @@ var General = {
         }, function() {
             $('.money-code').fadeOut();
             $(this).removeClass('active');
-        }, 800)
+        }, 800);
 
         $('.money-like .reward-button').click(function() {
             if ($(this).hasClass('active')) {
@@ -326,9 +261,7 @@ var General = {
                 $('.money-code').fadeIn();
                 $(this).addClass('active');
             }
-        })
-
-
+        });
     },
     commentLoader: function() {
         if (!$('body').hasClass('post-template')) {
@@ -337,10 +270,10 @@ var General = {
         var dataThreadKey = GlobalConfigue.duoshuoDomain + location.pathname;
         $(window).scroll(function() {
             if ($('.comment-area').has('div').length > 0) {
-                return false
+                return false;
             } else {
                 console.log('增加评论');
-                if (($('.author-image').isOnScreenVisible() || $('.read-next').isOnScreenVisible()) && $('.author-image').hasClass('duoshuo-loaded') == false) {
+                if (($('.author-image').isOnScreenVisible() || $('.read-next').isOnScreenVisible()) && $('.author-image').hasClass('duoshuo-loaded') === false) {
                     $('.author-image').addClass('duoshuo-loaded');
                     loadJS(General.absUrl + '/assets/js/duoshuo.modify.js', function() {
                         var el = document.createElement('div');
@@ -351,15 +284,13 @@ var General = {
                         scrollStop = true;
                         setTimeout(function() {
                             $('.comment-area').append(el);
-                        }, 250)
-
-                    })
+                        }, 250);
+                    });
                 }
             }
-
         });
     }
-}
+};
 
 
 
@@ -390,8 +321,7 @@ var ImageSmartLoader = {
             ImageSmartLoader.isWebPSupported = false;
             ImageSmartLoader.webPLoader();
         };
-        img.src = "data:image/webp;base64," + TestImages['demo'];
-
+        img.src = "data:image/webp;base64," + TestImages.demo;
     },
     imgLoader: function() {
         console.log('加载默认图片');
@@ -399,7 +329,7 @@ var ImageSmartLoader = {
     webPLoader: function() {
         console.log('加载webP');
         // alert(ImageSmartLoader.isWebPSupported);
-        if (ImageSmartLoader.isWebPSupported == true) {
+        if (ImageSmartLoader.isWebPSupported === true) {
             console.log('宽度是' + General.viewWidth);
             if (General.viewWidth == 768) {
                 $(".lazy").lazyload({
@@ -459,11 +389,7 @@ var ImageSmartLoader = {
         }
 
     },
-
-
-}
-
-
+};
 
 $(document).ready(function() {
     var $window = $(window);
@@ -568,45 +494,42 @@ $(document).ready(function() {
                     // console.log('CDN地址' +updatedUrl.indexOf('file.is26.com'));
                     if (updatedUrl.indexOf('upaiyun') > -1 || updatedUrl.indexOf('file.is26.com') > -1) {
                         // alert(1)
-                        if (settings.advanced_load == true) {
+                        if (settings.advanced_load === true) {
                             updatedUrl += '!';
                         }
-                        if (settings.is_scale == true) {
+                        if (settings.is_scale === true) {
                             updatedUrl += '/fw/' + settings.scale_width;
                         }
-                        if (settings.webP_load == true) {
+                        if (settings.webP_load === true) {
                             updatedUrl += '/format/webp';
                         }
                     }
 
                     // console.log(updatedUrl);
-                    $("<img />")
-                        .bind("load", function() {
+                    $("<img />").bind("load", function() {
+                        $self.hide();
 
-                            $self.hide();
+                        if ($self.is("img")) {
+                            $self.attr("src", updatedUrl);
+                        } else {
+                            $self.css("background-image", "url('" + updatedUrl + "')");
+                        }
+                        $self[settings.effect](settings.effect_speed);
 
-                            if ($self.is("img")) {
-                                $self.attr("src", updatedUrl);
-                            } else {
-                                $self.css("background-image", "url('" + updatedUrl + "')");
-                            }
-                            $self[settings.effect](settings.effect_speed);
+                        self.loaded = true;
 
-                            self.loaded = true;
+                        /* Remove image from array so it is not looped next time. */
+                        var temp = $.grep(elements, function(element) {
+                            return !element.loaded;
+                        });
+                        elements = $(temp);
 
-                            /* Remove image from array so it is not looped next time. */
-                            var temp = $.grep(elements, function(element) {
-                                return !element.loaded;
-                            });
-                            elements = $(temp);
-
-                            if (settings.load) {
-                                var elements_left = elements.length;
-                                settings.load.call(self, elements_left, settings);
-                            }
-                            $self.removeClass("loading");
-                        })
-                        .attr("src", updatedUrl);
+                        if (settings.load) {
+                            var elements_left = elements.length;
+                            settings.load.call(self, elements_left, settings);
+                        }
+                        $self.removeClass("loading");
+                    }).attr("src", updatedUrl);
                 }
             });
 
@@ -758,5 +681,4 @@ $(document).ready(function() {
         General.commentLoader();
 
     }
-    bgImage();
-})
+});
