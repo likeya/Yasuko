@@ -857,6 +857,19 @@ h1
     margin-bottom: .5rem;
 }
 
+code
+{
+    font: .9em Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+    display: inline-block;
+
+    padding: 2px 6px;
+
+    color: rgba(0, 0, 0, .5);
+    border-radius: 3px; 
+    background-color: rgba(209, 227, 237, .5);
+}
+
 .clearfix:before,
 .clearfix:after
 {
