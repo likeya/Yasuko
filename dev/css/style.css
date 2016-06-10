@@ -597,6 +597,9 @@ body, html {
   padding: 0;
   position: relative; }
 
+body {
+  background: #FFF url(https://cat.yufan.me/asserts/dot.png) repeat 0 0; }
+
 html {
   max-height: 100%;
   font-size: 62.5%;
@@ -682,6 +685,7 @@ code {
 .site-footer {
   position: relative;
   margin: 8rem 0 0 0;
+  background-color: #FFF;
   padding: 1.5rem;
   border-top: #EBF2F6 1px solid;
   font-family: "Exo", sans-serif;
