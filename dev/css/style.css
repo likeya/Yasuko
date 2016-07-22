@@ -748,7 +748,7 @@ code {
 
 .blog-background {
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center top;
   -webkit-background-size: cover;
   background-size: cover; }
 
@@ -760,7 +760,6 @@ code {
   top: 0;
   left: 0;
   z-index: -1;
-  background: url("../../assets/images/escheresque_ste.png");
   opacity: .25;
   background-color: rgba(0, 0, 0, 0.05);
   transition: background-color 500ms ease-out 2s;
