@@ -457,7 +457,7 @@ th
     @include use-sprite($icon-search,$normal,$retina)
 }
 */
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+applescript+bash+c+ruby+css-extras+git+groovy+handlebars+http+jade+java+json+lua+makefile+markdown+nasm+nginx+objectivec+perl+php+sass+scss+scala+sql+stylus+swift+yaml&plugins=line-highlight+line-numbers+autolinker+file-highlight+show-language */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+applescript+asciidoc+bash+c+csharp+cpp+coffeescript+ruby+docker+erlang+gherkin+git+go+groovy+haskell+http+jade+java+json+kotlin+latex+lua+makefile+markdown+matlab+nginx+objectivec+ocaml+pascal+perl+php+php-extras+properties+python+jsx+rust+sass+scss+scala+sql+stylus+swift+yaml&plugins=line-highlight+line-numbers+file-highlight+toolbar+highlight-keywords+autoloader+normalize-whitespace+show-language+copy-to-clipboard */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -647,10 +647,7 @@ pre[data-line]
     /* Same as .prism’s padding-top */
 
     background: rgba(153, 122, 102, .08);
-    background:    -moz-linear-gradient(left, rgba(153, 122, 102, .1) 70%, rgba(153, 122, 102, 0));
-    background: -webkit-linear-gradient(left, rgba(153, 122, 102, .1) 70%, rgba(153, 122, 102, 0));
-    background:      -o-linear-gradient(left, rgba(153, 122, 102, .1) 70%, rgba(153, 122, 102, 0));
-    background:         linear-gradient(left, rgba(153, 122, 102, .1) 70%, rgba(153, 122, 102, 0));
+    background: linear-gradient(to right, rgba(153, 122, 102, .1) 70%, rgba(153, 122, 102, 0));
 }
 
 .line-highlight:before,
@@ -739,46 +736,81 @@ pre.line-numbers > code
     color: #999;
 }
 
-.token a
-{
-    color: inherit;
-}
-
-div.prism-show-language
+pre.code-toolbar
 {
     position: relative;
 }
 
-div.prism-show-language > div.prism-show-language-label
+pre.code-toolbar > .toolbar
 {
-    font-size: .9em;
-
     position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    bottom: auto;
-    left: auto;
+    top: .3em;
+    right: .2em;
 
+    transition: opacity .3s ease-in-out;
+
+    opacity: 0;
+}
+
+pre.code-toolbar:hover > .toolbar
+{
+    opacity: 1;
+}
+
+pre.code-toolbar > .toolbar .toolbar-item
+{
     display: inline-block;
+}
 
-    width: auto;
-    height: auto;
+pre.code-toolbar > .toolbar a
+{
+    cursor: pointer;
+}
+
+pre.code-toolbar > .toolbar button
+{
+    font: inherit;
+    line-height: normal;
+
+    overflow: visible;
+
+    padding: 0;
+
+    -webkit-user-select: none;
+    /* for button */
+       -moz-user-select: none;
+        -ms-user-select: none; 
+
+    color: inherit;
+    border: 0;
+    background: none;
+}
+
+pre.code-toolbar > .toolbar a,
+pre.code-toolbar > .toolbar button,
+pre.code-toolbar > .toolbar span
+{
+    font-size: .8em;
+
     padding: 0 .5em;
 
-    -webkit-transform: none;
-       -moz-transform: none;
-        -ms-transform: none;
-         -o-transform: none;
-            transform: none; 
+    color: #bbb;
+    border-radius: .5em; 
+    background: #f5f2f0;
+    background: rgba(224, 224, 224, .2);
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, .2);
+}
 
-    color: black;
-    border-radius: 0 0 0 5px;
-    background-color: #cfcfcf;
-    -webkit-box-shadow: none;
-       -moz-box-shadow: none;
-            box-shadow: none;
-    text-shadow: none;
+pre.code-toolbar > .toolbar a:hover,
+pre.code-toolbar > .toolbar a:focus,
+pre.code-toolbar > .toolbar button:hover,
+pre.code-toolbar > .toolbar button:focus,
+pre.code-toolbar > .toolbar span:hover,
+pre.code-toolbar > .toolbar span:focus
+{
+    text-decoration: none; 
+
+    color: inherit;
 }
 
 body,
@@ -1063,6 +1095,7 @@ code
     -webkit-animation-iteration-count: infinite; 
 
     opacity: .25;
+    background: url('../../assets/images/escheresque_ste.png');
     background-color: rgba(0, 0, 0, .05);
 }
 

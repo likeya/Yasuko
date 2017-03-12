@@ -289,6 +289,14 @@ var General = {
                 }
             }
         });
+    },
+    loadFeatureImg: function() {
+        $('a.post-feature-img').each(function() {
+            var featureImg = $(this).data("img");
+            if ($(this).find('img').length == 0 && featureImg != undefined) {
+                $(this).html('<img src="' + featureImg + '" alt="cover">');
+            }
+        });
     }
 };
 
@@ -387,7 +395,6 @@ var ImageSmartLoader = {
                 });
             }
         }
-
     },
 };
 
@@ -679,6 +686,12 @@ $(document).ready(function() {
     if ($('body').hasClass('post-template')) {
         General.addIcons();
         General.commentLoader();
+    }
 
+    if ($('.post-excerpt').length > 0) {
+        if ($('a.post-feature-img').length != $('a.post-feature-img img').length) {
+            console.log('Some post may not have cover, try feature image instead');
+            General.loadFeatureImg();
+        }
     }
 });

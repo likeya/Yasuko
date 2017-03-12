@@ -1,20 +1,16 @@
 {{!< default}}
 
-    <header id="header" data-url="https://cat.yufan.me/cats/wallpaper/1606_sale.jpg" class="home-header blog-background banner-mask lazy {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-        <div class="header-wrap">
-        <div class="home-info-container">
-            <a href="{{@blog.url}}"><h2>且听书吟</h2></a>
-            <h4>我思 我说 我写</h4>
-        </div>
-        <div class="arrow_down" data-offset="-45">
-               <a href="javascript:;"></a>
-        </div>
-    </header>
-{{! The main content area on the homepage }}
-<main id="main" class="content homepage" role="main">
-{{! Each post will be output using this markup }}
-{{> "loop"}}
-{{!! After all the posts, we have the previous/next pagination links }}
+<header id="header" data-url="https://cat.yufan.me/cats/2017-01-21-57187532_p0.png" class="home-header blog-background banner-mask lazy {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <div class="header-wrap">
+    <div class="home-info-container">
+        <a href="{{@blog.url}}"><h2>{{@blog.title}}</h2></a>
+        <h4>{{@blog.description}}</h4>
+    </div>
+    <div class="arrow_down" data-offset="-45">
+           <a href="javascript:;"></a>
+    </div>
+</header>
 
-{{!-- {{pagination}} --}}
+<main id="main" class="content homepage" role="main">
+    {{> "loop"}}
 </main>
