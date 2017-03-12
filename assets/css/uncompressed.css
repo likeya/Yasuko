@@ -1539,7 +1539,8 @@ a.btn-post-excerpt
 
     vertical-align: baseline;
 }
-.single-post-inner p
+.single-post-inner p,
+.single-post-inner table
 {
     font-family: 'Exo', '-apple-system', 'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Hiragino Sans GB', 'Microsoft YaHei', Helvetica, Arial, sans-serif; 
     font-size: 1.6rem;
@@ -1637,6 +1638,56 @@ a.btn-post-excerpt
 
     border: 0 none;
     background: none;
+}
+.single-post-inner table
+{
+    width: 100%; 
+
+    border-spacing: 0;
+    border-collapse: separate;
+}
+.single-post-inner th,
+.single-post-inner td
+{
+    padding: 6px 15px;
+}
+.single-post-inner th
+{
+    font-weight: normal;
+
+    text-align: left; 
+
+    color: #000;
+    background: #cfcfcf;
+}
+.single-post-inner tr:first-child th:first-child
+{
+    border-top-left-radius: 6px;
+}
+.single-post-inner tr:first-child th:last-child
+{
+    border-top-right-radius: 6px;
+}
+.single-post-inner td
+{
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.single-post-inner td:first-child
+{
+    border-left: 1px solid #e0e0e0;
+}
+.single-post-inner tr:nth-child(odd) td
+{
+    background: #f5f2f0;
+}
+.single-post-inner tr:last-child td:first-child
+{
+    border-bottom-left-radius: 6px;
+}
+.single-post-inner tr:last-child td:last-child
+{
+    border-bottom-right-radius: 6px;
 }
 
 .tag-box a
