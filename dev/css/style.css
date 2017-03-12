@@ -1123,13 +1123,14 @@ a.btn-post-excerpt {
     border-top-left-radius: 6px; }
   .single-post-inner tr:first-child th:last-child {
     border-top-right-radius: 6px; }
-  .single-post-inner td {
-    border-right: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0; }
-  .single-post-inner td:first-child {
-    border-left: 1px solid #e0e0e0; }
   .single-post-inner tr:nth-child(odd) td {
     background: #f5f2f0; }
+  .single-post-inner tr:nth-child(odd) td {
+    background: #f5f2f0; }
+  .single-post-inner tr:nth-child(even) td:first-child {
+    border-left: 1px solid #f5f2f0; }
+  .single-post-inner tr:nth-child(even) td:last-child {
+    border-right: 1px solid #f5f2f0; }
   .single-post-inner tr:last-child td:first-child {
     border-bottom-left-radius: 6px; }
   .single-post-inner tr:last-child td:last-child {
