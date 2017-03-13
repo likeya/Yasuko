@@ -755,19 +755,21 @@ a.btn-post-excerpt {
 }
 #qr-code {
     .qr-img {
+        box-shadow: 0 0px 2px #e3e3e3;
         margin: 0 auto;
+        width: 15rem;
+            &:hover, &:active, &:focus {
+            background: #e6e6e6;
+            box-shadow: 0 0px 6px #e3e3e3;
+        }
+    }
+    canvas {
         display: block;
         width: 13rem;
         height: 13rem;
-        box-shadow: 0 0px 1px #e3e3e3;
-        &:hover, &:active {
-            background: #e6e6e6;
-            box-shadow: 0 0px 5px #e3e3e3;
-        }
-        canvas {
-            width: 13rem;
-            height: 13rem;
-        }
+        margin: 0 auto;
+        padding: 1rem;
+        background: #FFF;
     }
     p {
         display: block;

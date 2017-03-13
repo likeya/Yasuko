@@ -1867,24 +1867,29 @@ a.btn-post-excerpt
 
 #qr-code .qr-img
 {
+    width: 15rem; 
+    margin: 0 auto;
+
+    box-shadow: 0 0 2px #e3e3e3;
+}
+#qr-code .qr-img:hover,
+#qr-code .qr-img:active,
+#qr-code .qr-img:focus
+{
+    background: #e6e6e6;
+    box-shadow: 0 0 6px #e3e3e3;
+}
+
+#qr-code canvas
+{
     display: block;
 
     width: 13rem;
     height: 13rem;
     margin: 0 auto;
+    padding: 1rem;
 
-    box-shadow: 0 0 1px #e3e3e3;
-}
-#qr-code .qr-img:hover,
-#qr-code .qr-img:active
-{
-    background: #e6e6e6;
-    box-shadow: 0 0 5px #e3e3e3;
-}
-#qr-code .qr-img canvas
-{
-    width: 13rem;
-    height: 13rem;
+    background: #fff;
 }
 
 #qr-code p
