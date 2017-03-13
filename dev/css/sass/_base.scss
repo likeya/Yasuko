@@ -753,8 +753,9 @@ a.btn-post-excerpt {
         }
     }
 }
-.qr-code {
-    img {
+#qr-code {
+    .qr-img {
+        margin: 0 auto;
         display: block;
         width: 13rem;
         height: 13rem;
@@ -762,6 +763,10 @@ a.btn-post-excerpt {
         &:hover, &:active {
             background: #e6e6e6;
             box-shadow: 0 0px 5px #e3e3e3;
+        }
+        canvas {
+            width: 13rem;
+            height: 13rem;
         }
     }
     p {
