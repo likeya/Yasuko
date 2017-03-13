@@ -1676,13 +1676,17 @@ a.btn-post-excerpt
 {
     background: #f5f2f0;
 }
-.single-post-inner tr:nth-child(even) td:first-child
+.single-post-inner tr td:first-child
 {
     border-left: 1px solid #f5f2f0;
 }
-.single-post-inner tr:nth-child(even) td:last-child
+.single-post-inner tr td:last-child
 {
     border-right: 1px solid #f5f2f0;
+}
+.single-post-inner tr:last-child td
+{
+    border-bottom: 1px solid #f5f2f0;
 }
 .single-post-inner tr:last-child td:first-child
 {
