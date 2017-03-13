@@ -290,13 +290,17 @@ var General = {
             }
         });
     },
-    loadFeatureImg: function() {
+    featurePicLoader: function() {
         $('a.post-feature-img').each(function() {
             var featureImg = $(this).data("img");
-            if ($(this).find('img').length == 0 && featureImg != undefined) {
+            if ($(this).find('img').length === 0 && featureImg !== undefined) {
                 $(this).html('<img src="' + featureImg + '" alt="cover">');
             }
         });
+    },
+    qrcodeLoader: function() {
+        var articleUrl = unescape(encodeURIComponent($('#qr-code .qr-img').data('qr')));
+        $('#qr-code .qr-img').qrcode({text: articleUrl});
     }
 };
 
@@ -686,12 +690,13 @@ $(document).ready(function() {
     if ($('body').hasClass('post-template')) {
         General.addIcons();
         General.commentLoader();
+        General.qrcodeLoader();
     }
 
     if ($('.post-excerpt').length > 0) {
         if ($('a.post-feature-img').length != $('a.post-feature-img img').length) {
             console.log('Some post may not have cover, try feature image instead');
-            General.loadFeatureImg();
+            General.featurePicLoader();
         }
     }
 });

@@ -457,7 +457,7 @@ th
     @include use-sprite($icon-search,$normal,$retina)
 }
 */
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+applescript+asciidoc+bash+c+csharp+cpp+coffeescript+ruby+docker+erlang+gherkin+git+go+groovy+haskell+http+jade+java+json+kotlin+latex+lua+makefile+markdown+matlab+nginx+objectivec+ocaml+pascal+perl+php+php-extras+properties+python+jsx+rust+sass+scss+scala+sql+stylus+swift+yaml&plugins=line-highlight+line-numbers+file-highlight+toolbar+highlight-keywords+autoloader+normalize-whitespace+show-language+copy-to-clipboard */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+applescript+asciidoc+bash+c+csharp+cpp+coffeescript+ruby+docker+erlang+gherkin+git+go+groovy+haskell+http+jade+java+json+kotlin+latex+lua+makefile+markdown+matlab+nginx+objectivec+ocaml+pascal+perl+php+php-extras+properties+python+jsx+rust+sass+scss+scala+sql+stylus+swift+yaml&plugins=line-highlight+line-numbers+file-highlight+toolbar+highlight-keywords+autoloader+normalize-whitespace+show-language */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -1865,23 +1865,34 @@ a.btn-post-excerpt
     border-top-color: #e6e6e6;
 }
 
-.qr-code img
+#qr-code .qr-img
+{
+    width: 15rem; 
+    margin: 0 auto;
+
+    box-shadow: 0 0 2px #e3e3e3;
+}
+#qr-code .qr-img:hover,
+#qr-code .qr-img:active,
+#qr-code .qr-img:focus
+{
+    background: #e6e6e6;
+    box-shadow: 0 0 6px #e3e3e3;
+}
+
+#qr-code canvas
 {
     display: block;
 
     width: 13rem;
     height: 13rem;
+    margin: 0 auto;
+    padding: 1rem;
 
-    box-shadow: 0 0 1px #e3e3e3;
-}
-.qr-code img:hover,
-.qr-code img:active
-{
-    background: #e6e6e6;
-    box-shadow: 0 0 5px #e3e3e3;
+    background: #fff;
 }
 
-.qr-code p
+#qr-code p
 {
     font-size: 1.2rem;
     font-style: italic;
