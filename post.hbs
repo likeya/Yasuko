@@ -65,7 +65,7 @@
     <section class="author">
         {{#if image}}
         <figure class="author-image">
-            <a class="img" href="{{website}}" style="background-image: url('{{image}}')"><span class="hide">{{name}}'s Picture</span></a>
+            <a class="img" href="{{website}}" target="_blank" style="background-image: url('{{image}}')"><span class="hide">{{name}}'s Picture</span></a>
         </figure>
         {{/if}}
 
@@ -73,8 +73,6 @@
             <a href="javascript:;">{{name}}</a>
             {{#if bio}}
             <p>{{bio}}</p>
-            {{else}}
-            <p>Read <a href="{{url}}">more posts</a> by this author.</p>
             {{/if}}
             <div class="author-meta">
                 {{#if location}}
@@ -92,23 +90,23 @@
     {{#author}}
     <section class="share">
         <div class="share-icons" id="share-icons">
-            <a class="icon-share icon-github" href="https://github.com/syhily">
+            <a class="icon-share icon-github" target="_blank" href="https://github.com/syhily">
                 <span class=""><i class="iconfont  iconfont-github">&#xe60d;</i></span>
             </a>
             {{#if twitter}}
-            <a class="icon-share" href="{{twitter_url}}">
+            <a class="icon-share" target="_blank" href="{{twitter_url}}">
                 <span class=""><i class="iconfont iconfont-twitter">&#xe604;</i></span>
             </a>
             {{/if}}
             {{#if facebook}}
-            <a class="icon-share" href="{{facebook_url}}">
+            <a class="icon-share" target="_blank" href="{{facebook_url}}">
                 <span class=""><i class="iconfont iconfont-facebook">&#xe601;</i></span>
             </a>
             {{/if}}
-            <a class="icon-share" href="https://plus.google.com/105473460238891340420/">
+            <a class="icon-share" target="_blank" href="https://plus.google.com/105473460238891340420/">
                 <span class=""><i class="iconfont iconfont-google">&#xe602;</i></span>
             </a>
-            <a class="icon-share icon-v2ex" href="https://www.v2ex.com/member/syhily">
+            <a class="icon-share icon-v2ex" target="_blank" href="https://www.v2ex.com/member/syhily">
                 <span class=""><i class="iconfont  iconfont-v2ex">&#xe605;</i></span>
             </a>
         </div>
