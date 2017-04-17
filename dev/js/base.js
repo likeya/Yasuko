@@ -68,6 +68,7 @@ var General = {
     isWechat: false,
     viewWidth: $(window).width(),
     absUrl: location.protocol + '//' + location.host,
+    neteaseCommentSDK: 'https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js',
     init: function() {
         var win = window;
         var doc = win.document;
@@ -273,19 +274,23 @@ var General = {
                 return false;
             } else {
                 console.log('增加评论');
-                if (($('.author-image').isOnScreenVisible() || $('.read-next').isOnScreenVisible()) && $('.author-image').hasClass('duoshuo-loaded') === false) {
-                    $('.author-image').addClass('duoshuo-loaded');
-                    loadJS(General.absUrl + '/assets/js/duoshuo.modify.js', function() {
-                        var el = document.createElement('div');
-                        el.setAttribute('data-thread-key', dataThreadKey);
-                        el.setAttribute('data-url', location.href);
-                        el.setAttribute('data-title', $('title').html());
-                        DUOSHUO.EmbedThread(el);
-                        scrollStop = true;
-                        setTimeout(function() {
-                            $('.comment-area').append(el);
-                        }, 250);
-                    });
+                if (window.Yasuko === undefined || Yasuko.comment === undefined || Yasuko.comment.productKey === undefined || Yasuko.comment.loaderToken === undefined) {
+                    console.log('Error Config');
+                } else {
+                    if (($('.author-image').isOnScreenVisible() || $('.read-next').isOnScreenVisible()) && $('.author-image').hasClass('comment-loaded') === false) {
+                        $('.author-image').addClass('comment-loaded');
+                        var cloudTieConfig = {
+                            url: document.location.href,
+                            sourceId: "",
+                            productKey: Yasuko.comment.productKey,
+                            target: "cloud-tie-wrapper"
+                        };
+                        window.cloudTieConfig = cloudTieConfig;
+                        window.yunManualLoad = true;
+                        loadJS(General.neteaseCommentSDK, function() {
+                            Tie.loader(Yasuko.comment.loaderToken, true);
+                        });
+                    }
                 }
             }
         });
